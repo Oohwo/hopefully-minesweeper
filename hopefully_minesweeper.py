@@ -96,55 +96,58 @@ class hopefully_minesweeper:
     hit_bomb = False
     solved = False
     
-    num_revealed = 0
-    num_safe_spaces = int(self.dimA) * int(self.dimB) - self.num_mines
+    num_revealed = 0 # number of spaces revealed by player
+    num_safe_spaces = int(self.dimA) * int(self.dimB) - self.num_mines # number of spaces that are NOT mines
     
-    while (not hit_bomb and not solved):
-      num_revealed += 1
+    while (not hit_bomb and not solved): # loops until player finishes the game or hits a mine
+      num_revealed += 1 # increments after every user input
       
-      if (reveal_coord_to_index in self.mines_dict):
+      if (reveal_coord_to_index in self.mines_dict): # aw crud you hit a bomb
         hit_bomb = True
         print("oh no you hit a bomb lol\nhere's the revealed board:")
         print(self.solution_matrix)
-        print("play again? y/n")
+        print("play again? y/n") # honestly you could make a separate function for this
         if (str(input()) == 'n'):
           exit()
         else:
           break
         
-      if (int(num_revealed) == int(num_safe_spaces)):
+      if (int(num_revealed) == int(num_safe_spaces)): # beat the game
         print("gg lol you won")
         solved = True
-        print("play again? y/n")
+        print("play again? y/n") # please optimize this lol
         if (str(input()) == 'n'):
           exit()
         else:
           break
-        
+      
+      # reveals a space one-at-a-time and re-shapes
       self.puzzle_matrix[int(xy_coords[0])][int(xy_coords[1])] = self.solution_matrix[int(xy_coords[0])][int(xy_coords[1])]
       self.puzzle_matrix = np.reshape(self.puzzle_matrix, (self.dimA, self.dimB))
       
-      print(self.puzzle_matrix)
-      print("Please enter the row and column of the space you would like to reveal next.")
+      print(self.puzzle_matrix) # prints matrix
+      print("Please enter the row and column of the space you would like to reveal next.") # prompt
       
+      # repetition
       xy = input()
       xy_coords = xy.split(',')
       reveal_coord_to_index = int(xy_coords[0]) * int(self.dimA) + int(xy_coords[1])
 
-  def run():
+  def run(): # welcome prompt / "user interface" on the terminal
     print("Welcome to Minesweeper!\nNumber of rows?")
-    dimA = int(input())
+    dimA = int(input()) # initializes number of rows
     
     print("Number of columns?")
-    dimB = int(input())
+    dimB = int(input()) # initializes number of columns
     
     print("Number of mines?")
-    num_mines = int(input())
+    num_mines = int(input()) # initializes number of mines
     
     test = hopefully_minesweeper(dimA, dimB, num_mines)
     test.generate_solution_board()
     test.play()
 
+# loops until player doesn't wanna play anymore
 loop = True
 while (loop):
   hopefully_minesweeper.run()
