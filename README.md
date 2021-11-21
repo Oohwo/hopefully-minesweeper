@@ -1,7 +1,7 @@
 # Hopefully Minesweeper
 
 ## Description
-"Hopefully Minesweeper" is a Python script that allows you to play an extremely scuffed version of Minesweeper through your terminal.
+"Hopefully Minesweeper" is a Python script that allows you to play an extremely scuffed version of Minesweeper through your terminal. I coded this in Python for fun and to prepare for CS242 (Introduction to Data Science) which primarily uses Python. This project is still in the works but I hope to improve upon it! I've been playing Minesweeper for fun since my sophomore year of highschool so it was a lot of fun to try to code it myself!
 
 ## How to Play Minesweeper
 1) Declare how many rows, columns, and mines you would like your board to have.
@@ -32,3 +32,8 @@ You can also open this in your preferred coding IDE and run the file.
 - [ ] Options Menu (cheats enabled)
 - [ ] Arrow-keys to navigate (because who likes counting rows and columns?!)
 - [ ] Potential YouTube video of the coding process (wouldn't that be funny?)
+
+## Credits
+- Shoutout to @potatomasqer for inspiring me to create my own Minesweeper in Terminal!
+- Shoutout to Johnny who is the friend who got me to play Minesweeper in the first place! I forgot if we ever got sub-150 for expert mode on the app lol
+- Karl Jobst for this cool [video](https://www.youtube.com/watch?v=V2kWCfzJVVU) on Minesweeper and the challenge
