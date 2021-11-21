@@ -20,6 +20,9 @@ You can also open this in your preferred coding IDE and run the file.
 - [x] Made a scuffed version of Minesweeper
 - [x] Cried a little bit
 - [x] Drank boba
-- [ ] White-space functionality
-- [ ] Arrow-keys to navigate
-- [ ] Potential YouTube video of the coding process
+- [ ] Clear multiple empty-spaces at once (wow I'm excited for the math that'll go into here...)
+- [ ] Artsy Welcome Menu B)
+- [ ] Difficulty Menu (indecisive of custom rows, columns, and mines? we'll have a noob, casual, and pro difficulty!)
+- [ ] Options Menu (cheats enabled)
+- [ ] Arrow-keys to navigate (because who likes counting rows and columns?!)
+- [ ] Potential YouTube video of the coding process (wouldn't that be funny?)
