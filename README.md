@@ -5,7 +5,7 @@
 Blah blah blah I'll add a description here later
 
 ## Demo
-![Minesweeper Demo](https://imgur.com/a/InlRVaN)
+![Minesweeper Demo](https://media1.giphy.com/media/hy5ywBxXzjjhJRbk27/giphy.gif)
 
 ## Installation (Windows)
 1) Download the zip and extract those files
@@ -15,6 +15,6 @@ Blah blah blah I'll add a description here later
 5) Run `hopefully_minesweeper.py`
 
 ## Roadmap
-[] White-space functionality
-[] Arrow-keys to navigate
-[] lol potential YouTube video explaining the process of me creating it that would be funny
+- [] White-space functionality
+- [] Arrow-keys to navigate
+- [] lol potential YouTube video explaining the process of me creating it that would be funny
