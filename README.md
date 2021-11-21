@@ -1,8 +1,14 @@
 # Hopefully Minesweeper
-"Hopefully Minesweeper" is a Python script that allows you to play an extremely scuffed version of Minesweeper through your terminal.
 
 ## Description
-TBA
+"Hopefully Minesweeper" is a Python script that allows you to play an extremely scuffed version of Minesweeper through your terminal.
+
+## How to Play Minesweeper
+1) Declare how many rows, columns, and mines you would like your board to have.
+2) Input the space you would like to clear by (row,column), try not to hit any 'x's!
+3) The numbers indicate how many mines are adjacent to the space. Use process of elimination to avoid the mines!
+4) Good luck and have fun!
+Wanna practice Minesweeper? I recommend this [website](https://minesweeper.online).
 
 ## Demo
 ![Minesweeper Demo](https://media1.giphy.com/media/hy5ywBxXzjjhJRbk27/giphy.gif)
