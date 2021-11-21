@@ -113,14 +113,42 @@ class hopefully_minesweeper:
       reveal_coord_to_index = int(xy_coords[0]) * int(self.dimA) + int(xy_coords[1])
 
   def run(): # welcome prompt / "user interface" on the terminal
-    print("Welcome to Minesweeper!\nNumber of rows?")
-    dimA = int(input()) # initializes number of rows
+    print("Welcome to Minesweeper!")
+    while True:
+      try:
+        print("Number of rows?")
+        dimA = int(input()) # initializes number of rows
+      except ValueError:
+        print("Not a valid number, try again!")
+      else:
+        if dimA > 0:
+          break
+        else:
+          print("Dimension is out of range, try again!")
     
-    print("Number of columns?")
-    dimB = int(input()) # initializes number of columns
-    
-    print("Number of mines?")
-    num_mines = int(input()) # initializes number of mines
+    while True:
+      try:
+        print("Number of columns?")
+        dimB = int(input()) # initializes number of rows
+      except ValueError:
+        print("Not a valid number, try again!")
+      else:
+        if dimB > 0:
+          break
+        else:
+          print("Dimension is out of range, try again!")
+
+    while True:
+      try:
+        print("Number of mines?")
+        num_mines = int(input()) # initializes number of rows
+      except ValueError:
+        print("Not a valid number, try again!")
+      else:
+        if 0 <= num_mines <= dimA * dimB - 1:
+          break
+        else:
+          print("The number of mines is out of range, try again!")
     
     test = hopefully_minesweeper(dimA, dimB, num_mines)
     test.generate_solution_board()
