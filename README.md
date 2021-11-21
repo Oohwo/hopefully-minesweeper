@@ -2,7 +2,7 @@
 "Hopefully Minesweeper" is a Python script that allows you to play an extremely scuffed version of Minesweeper through your terminal.
 
 ## Description
-Blah blah blah I'll add a description here later
+TBA
 
 ## Demo
 ![Minesweeper Demo](https://media1.giphy.com/media/hy5ywBxXzjjhJRbk27/giphy.gif)
@@ -14,7 +14,12 @@ Blah blah blah I'll add a description here later
 4) The script uses NumPy to create the Minesweeper box (a 2d-array). To install, type `py -m pip install numpy` 
 5) Run `hopefully_minesweeper.py`
 
+You can also open this in your preferred coding IDE and run the file.
+
 ## Roadmap
-- [] White-space functionality
-- [] Arrow-keys to navigate
-- [] lol potential YouTube video explaining the process of me creating it that would be funny
+- [x] Made a scuffed version of Minesweeper
+- [x] Cried a little bit
+- [x] Drank boba
+- [ ] White-space functionality
+- [ ] Arrow-keys to navigate
+- [ ] Potential YouTube video of the coding process
