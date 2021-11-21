@@ -7,6 +7,10 @@ class hopefully_minesweeper:
     self.dimB = dimB
     self.num_mines = num_mines
 
+    self.directions_keys_array = ['north', 'north_east', 'east', 'south_east', 'south', 'south_west', 'west', 'north_west']
+    self.directions_values_array = [[-1,0], [-1, 1], [0, 1], [1, 1], [1, 0], [1, -1], [0, -1], [-1, -1]]
+    self.directions_dict = {} # used in get_space()
+    
     self.solution_matrix = np.empty((dimA, dimB), str) # creates an empty matrix of size A x B
     self.solution_matrix.fill('?') # fills matrix with '?'
     self.solution_array = self.solution_matrix.ravel() # converts matrix to 1d array
@@ -19,62 +23,38 @@ class hopefully_minesweeper:
     self.mines_dict = {} # dict of mines (key: 1d index, value: 2d coordinates)
 
   def generate_solution_board(self):
-    # generates mines
     self.mines_1darray = random.sample(range(0, len(self.solution_array) - 1), self.num_mines)
     self.mines_1darray.sort()
     for index in self.mines_1darray:
       self.solution_array[index] = 'x'
       self.mines_coords_array.append((int(index / self.dimA), index % self.dimB))
 
-    # reshapes 1d to 2d array
-    self.solution_matrix = np.reshape(self.solution_array, (self.dimA, self.dimB))
+    self.solution_matrix = np.reshape(self.solution_array, (self.dimA, self.dimB)) # 1d -> 2d array
 
-    # creates dict
-    for key in self.mines_1darray:
+    for key in self.mines_1darray: # creates dict of mines
       for value in self.mines_coords_array:
         self.mines_dict[key] = value
         self.mines_coords_array.remove(value)
         break
-
-    # print("Mine Dictionary:", self.mines_dict)
-
-    directions_arr = {'north', 'north_east', 'east', 'south_east', 'south', 'south_west', 'west', 'north_west'}
-    for mine in self.mines_dict: # iterates through each mine
-      for direction in directions_arr: # iterates through surrounding spaces (clockwise starting from north)
-        self.get_space(mine, direction) 
     
-    # print(self.solution_matrix)
-  
-  def toStr(self): # i don't even think this is needed but check later
-    print(self.mines_dict)
-
+    for key in self.directions_keys_array: # creates dict of directions
+      for value in self.directions_values_array:
+        self.directions_dict[key] = value
+        self.directions_values_array.remove(value)
+        break
+    
+    for mine in self.mines_dict: # iterates through each mine
+      for direction in self.directions_dict: # iterates through surrounding spaces (clockwise starting from north)
+        self.get_space(mine, direction) # replaces '?' with number of mines adjacent
+    
   def get_space(self, mine, direction):
     coord_x = self.mines_dict.get(mine)[0]
     coord_y = self.mines_dict.get(mine)[1]
     symbol = ''
-
-  # PLEASE make this a dictionary instead when you're less lazy lol, also a graphic would be cool :^)
-    if (direction == 'north'):
-      coord_x = coord_x - 1
-    if (direction == 'north_east'):
-      coord_x -= 1
-      coord_y += 1
-    if (direction == 'east'):
-      coord_y += 1
-    if (direction == 'south_east'):
-      coord_x += 1
-      coord_y += 1
-    if (direction == 'south'):
-      coord_x += 1
-    if (direction == 'south_west'):
-      coord_x += 1
-      coord_y -= 1
-    if (direction == 'west'):
-      coord_y -= 1
-    if (direction == 'north_west'):
-      coord_x -= 1
-      coord_y -= 1
-
+  
+    coord_x += int(self.directions_dict[direction][0])
+    coord_y += int(self.directions_dict[direction][1])
+  
     if (0 <= coord_x and coord_x <= self.dimA - 1 and 0 <= coord_y and coord_y <= self.dimB - 1): # checks if coords are not out of bounds
       symbol = self.solution_matrix[coord_x][coord_y] # grabs symbol 
       if (symbol != 'x'):
@@ -85,7 +65,7 @@ class hopefully_minesweeper:
         self.solution_matrix[coord_x][coord_y] = symbol 
         self.solution_matrix = np.where(self.solution_matrix == '?', '0', self.solution_matrix) # replace remaining '?' with 0s
 
-  def play(self): # yay you get to play the game
+  def play(self):
     print(self.puzzle_matrix)
     
     print("Please enter the row and column of the space you would like to reveal.\nExample: 0,0")
@@ -128,8 +108,7 @@ class hopefully_minesweeper:
       print(self.puzzle_matrix) # prints matrix
       print("Please enter the row and column of the space you would like to reveal next.") # prompt
       
-      # repetition
-      xy = input()
+      xy = input() # grabs next coordinate input
       xy_coords = xy.split(',')
       reveal_coord_to_index = int(xy_coords[0]) * int(self.dimA) + int(xy_coords[1])
 
@@ -147,7 +126,6 @@ class hopefully_minesweeper:
     test.generate_solution_board()
     test.play()
 
-# loops until player doesn't wanna play anymore
-loop = True
+loop = True # loops until player doesn't wanna play anymore
 while (loop):
   hopefully_minesweeper.run()
