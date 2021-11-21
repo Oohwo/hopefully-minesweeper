@@ -34,6 +34,6 @@ You can also open this in your preferred coding IDE and run the file.
 - [ ] Potential YouTube video of the coding process (wouldn't that be funny?)
 
 ## Credits
-- Shoutout to @potatomasqer for inspiring me to create my own Minesweeper in Terminal!
+- Shoutout to [@potatomasqer](https://github.com/potatomasqer/python-game-projects/blob/master/minesweeper.py) for inspiring me to create my own Minesweeper in Terminal!
 - Shoutout to Johnny who is the friend who got me to play Minesweeper in the first place! I forgot if we ever got sub-150 for expert mode on the app lol
 - Karl Jobst for this cool [video](https://www.youtube.com/watch?v=V2kWCfzJVVU) on Minesweeper and the challenge
