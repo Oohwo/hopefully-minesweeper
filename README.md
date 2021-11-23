@@ -14,11 +14,8 @@ Wanna practice Minesweeper? I recommend this [website](https://minesweeper.onlin
 ![Minesweeper Demo](https://media1.giphy.com/media/hy5ywBxXzjjhJRbk27/giphy.gif)
 
 ## Installation (Windows)
-~~1) Download the zip and extract those files
-~~2) We need to install Python. You can get the latest version [here](https://www.python.org/downloads/).
-~~3) Open command prompt! This is where we'll be playing Minesweeper.
-4) The script uses NumPy to create the Minesweeper box (a 2d-array). To install, type `py -m pip install numpy` 
-5) Run `hopefully_minesweeper.py`
+1) `py -m pip install numpy`
+2) Run `hopefully_minesweeper.py`
 
 You can also open this in your preferred coding IDE and run the file.
 
