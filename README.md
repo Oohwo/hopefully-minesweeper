@@ -14,7 +14,7 @@ Wanna practice Minesweeper? I recommend this [website](https://minesweeper.onlin
 ![Minesweeper Demo](https://media1.giphy.com/media/hy5ywBxXzjjhJRbk27/giphy.gif)
 
 ## Installation (Windows)
-1) `py -m pip install numpy`
+1) `py -m pip install numpy` (installs NumPy, used to create the matrix and do other cool matrix stuff)
 2) Run `hopefully_minesweeper.py`
 
 You can also open this in your preferred coding IDE and run the file.
